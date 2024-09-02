@@ -1,0 +1,48 @@
+vlib work
+vlog adder.v ALU.v ALU_Decoder.v Control_Unit.v Data_Memory.v Instruction_Memory.v Main_decoder.v MIPS_Top.v MUX.v PC.v Register_File.v shift_left_twice.v sign_extend.v MIPS_tb.v
+vsim -voptargs="+acc" work.MIPS_tb
+add wave *
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/ALUResult_wire \
+sim:/MIPS_tb/MIPS/RD_Data_mem_wire
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/PC_out_wire
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/instruction_bus_15to11
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/WD3_wire
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/RD2_wire
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/MemtoReg_wire
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/MemWrite_wire
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/Data_mem/Data_Mem
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/program_counter/PC
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/Zero_wire
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/RD1_wire
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/A3_wire
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/reg_file/registers
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/reg_file/WE3 \
+sim:/MIPS_tb/MIPS/reg_file/A1 \
+sim:/MIPS_tb/MIPS/reg_file/A2
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/Control_unit/Op \
+sim:/MIPS_tb/MIPS/Control_unit/Funct \
+sim:/MIPS_tb/MIPS/Control_unit/RegWrite
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/Sign_extend/in \
+sim:/MIPS_tb/MIPS/Sign_extend/out
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/Control_unit/jump
+add wave -position insertpoint  \
+sim:/MIPS_tb/MIPS/Data_mem/A
+run -all
+#quit -sim
